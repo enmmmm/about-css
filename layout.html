@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+  <style>
+    /* 圣杯布局---start---  用到了浮动和绝对定位 */
+    /* body {
+      220px(左)+220px(右)+220px(左边绝对定位占的220px)
+      min-width: 660px;
+    }
+
+    .lay-header,.lay-footer {
+      width: 100%;
+      text-align: center;
+      background-color: #ccc;
+    }
+
+    .container {
+      box-sizing: border-box;
+      width: 100%;
+      background-color: aquamarine;
+      padding: 0 220px 0 220px;
+    }
+
+    .main,.left,.right {
+      float: left;
+    }
+
+    .main {
+      width: 100%;
+      background-color: cornflowerblue;
+    }
+
+    .left {
+      position: relative;
+      left: -220px;
+      margin-left: -100%;
+      width: 220px;
+      background-color: bisque;
+    }
+
+    .right {
+      width: 220px;
+      margin-right: -220px;
+      background-color: burlywood;
+    }
+
+    .lay-footer {
+      clear: both;
+    } */
+    /* 圣杯布局---end--- */
+
+    /* 双飞翼布局---start---  用到了浮动 */
+    /* body {
+       220px(左)+220px(右)+150px(给中间main留的可用宽度)
+      min-width: 590px;
+    }
+
+    .lay-header,.lay-footer {
+      text-align: center;
+      background-color: #ccc;
+    }
+
+    .main,.left,.right {
+      min-height: 130px;
+      float: left;
+      word-break: break-all;
+    }
+
+    .main {
+      width: 100%;
+      background: cornflowerblue;
+    }
+
+    .main-corn {
+      margin: 0 220px 0 220px;
+      min-width: 220px;
+    }
+
+    .left {
+      width: 220px;
+      margin-left: -100%;
+      background: bisque;
+    }
+
+    .right {
+      width: 220px;
+      margin-left: -220px;
+      background: burlywood;
+    }
+
+    .lay-footer {
+      clear: both;
+    } */
+    /* 双飞翼布局---end--- */
+
+    /* flex布局 所有浏览器支持（IE10+） ---start--- */
+    .container {
+      display: flex;
+    }
+
+    .main {
+      flex: 1;
+    }
+
+    .left {
+      /* flex-grow,flex-shrink,flex-basic 默认值为0 1 auto，后两个属性可选。 */
+      flex: 0 0 220px;
+      order: -1;
+    }
+
+    .right {
+      flex: 0 0 220px;
+    }
+    /* flex布局---end--- */
+
+    /* grid布局 所有浏览器支持（IE10+） ---start--- */
+    /* body {
+      220px(左)+220px(右)+150px(给中间main留的可用宽度)
+      min-width: 590px;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 220px calc(100% - 440px) 220px;
+    } */
+
+  </style>
+  <body>
+    <div class="lay-header">
+      Header
+    </div>
+    <div class="container">
+      <div class="main">
+        <!-- 双飞翼布局多套了一层div结构 -->
+        <!-- <div class="main-corn"> -->
+          <h2>Main</h2>
+          <p>This is main body</p>
+        <!-- </div> -->
+      </div>
+      <div class="left">
+        <h2>left</h2>
+        <p>This is left body</p>
+      </div>
+      <div class="right">
+        <h2>right</h2>
+        <p>This is right body</p>
+      </div>
+    </div>
+    <div class="lay-footer">
+      <h4>Footer</h4>
+    </div>
+  </body>
+</html>
