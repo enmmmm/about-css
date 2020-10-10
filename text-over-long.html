@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<style>
+  .wapper {
+    width: 150px;
+    background: aquamarine;
+    /* word-break: keep-all; */
+    overflow: hidden;
+  }
+
+  p {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  /* 通过js判断文本是否溢出，达到只给文本溢出的元素加跑马灯来回滚动的效果 */
+  p:hover {
+    animation: move 1.5s infinite alternate linear;
+  }
+
+  @keyframes move {
+    0% {
+      margin-left: 0;
+      transform: translate(0,0);
+    }
+    100% {
+      /* 容器定宽，文本不定宽 */
+      /* 100%-150px：需要滚动的距离=溢出的文本元素的宽度-父元素的宽度（p自身宽度减去div宽度），整体前面加个负号，是滚动方向 */
+      /* transform: translate(calc(-100% + 150px),0); */
+
+      /* 容器不定宽，文本不定宽 */
+      /* 向右位移父容器宽度的100% */
+      margin-left: 100%;
+      /* 向左位移自身宽度的100% */
+      transform: translate(-100%,0);
+    }
+  }
+</style>
+
+<body>
+  <div class="wapper">
+    <p>我的宽度是正常宽度</p>
+    <p>我的宽度是溢出了一小部分</p>
+    <p>我的宽度是溢出了溢出了很大一部分</p>
+  </div>
+</body>
+</html>
