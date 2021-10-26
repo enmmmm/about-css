@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		html,body {
+			height: 100%;
+		}
+		.page {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+		.header,.footer {
+			width: 100%;
+			height: 20%;
+			background: #2ef;
+		}
+		.main {
+			width: 100%;
+			flex: 1;
+			overflow-y: auto;
+			/* ios上激活平滑滚动 */
+			-webkit-overflow-scrolling: touch;
+			background: pink;
+		}
+
+		/* flex的取值：
+			flex: auto 即1 1 auto
+			flex: 1 即1 1 0
+			flex: none 即0 0 auto
+			*/
+		/* flex: 1 === flex: 1 1 0
+			flex-grow: 1   定义项目放大比例，1: 存在剩余空间时放大，默认值为0，不放大
+			flex-shrink: 1 定义项目缩小比例，1: 空间不足时缩小，默认值为1，不缩小
+			flex-basis: 0% 给上面两个属性分配空间之前，计算项目是否有多余空间，默认值为auto，即项目本身的大小
+			*/
+	</style>
+</head>
+<body>
+	<div class="page">
+    <div class="header">这是标题头</div>
+    <div class="main">
+			这是内容这是内容这是内容这是内容这是内容这是内容
+			这是内容这是内容这是内容这是内容这是内容这是内容
+			这是内容这是内容这是内容这是内容这是内容这是内容
+		</div>
+    <div class="footer">这是底部区域</div>
+	</div>
+</body>
+</html>
